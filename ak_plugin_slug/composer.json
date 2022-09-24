@@ -1,0 +1,14 @@
+{
+    "require": {
+        "illuminate/database": "^8.83",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "classmap": [
+            "classes"
+        ]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.4"
+    }
+}

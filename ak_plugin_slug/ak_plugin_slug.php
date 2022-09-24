@@ -65,6 +65,21 @@ register_deactivation_hook( __FILE__, 'deactivate_ak_plugin_slug' );
 require plugin_dir_path( __FILE__ ) . 'includes/class-ak_plugin_slug.php';
 
 /**
+ * This file is use for connect the db for run the laravel function
+ * This also include the migrations, models
+ */
+require plugin_dir_path( __FILE__ ) . "bootstrap.php";
+
+// $user = User::Create([    'name' => "Ahmed Khan",    'email' => "ahmed.khan@lbs.com",    'password' => password_hash("ahmedkhan",PASSWORD_BCRYPT), ]);
+// $user->todo()->create([
+// 	'todo' => "Working with Eloquent Without PHP",
+// 	'category' => "eloquent",
+// 	'description' => "Testing the work using eloquent without laravel"
+// ]);
+
+
+
+/**
  * Begins execution of the plugin.
  *
  * Since everything within the plugin is registered via hooks,
