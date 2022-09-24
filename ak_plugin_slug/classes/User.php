@@ -3,43 +3,19 @@
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class User extends Eloquent
-
 {
 
-   /**
-   * The attributes that are mass assignable.
-   *
-   * @var array
-   */
+    function __construct($table = 'users')
+    {
+        global $table_prefix;
+        $this->table = $table_prefix . $table;
+    }
 
-   protected $fillable = [
-
-       'name', 'email', 'password','userimage'
-
-   ];
-
-   /**
-   * The attributes that should be hidden for arrays.
-   *
-   * @var array
-   */
-
-   protected $hidden = [
-
-       'password', 'remember_token',
-
-   ];
-
-   /*
-   * Get Todo of User
-   *
-   */
-
-   public function todo()
-
-   {
-       return $this->hasMany('Todo');
-
-   }
-
- }
+    /*
+    * Get Todo of User
+    */
+    public function todo()
+    {
+        return $this->hasMany('Todo');
+    }
+}
