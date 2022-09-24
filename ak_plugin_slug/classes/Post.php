@@ -10,5 +10,9 @@ class Post extends Eloquent
         global $table_prefix;
         $this->table = $table_prefix . $table;
     }
-    
+
+    public function postmeta()
+    {
+        return $this->hasMany(Postmeta::class, 'post_id', 'ID', $this->table);
+    }
 }

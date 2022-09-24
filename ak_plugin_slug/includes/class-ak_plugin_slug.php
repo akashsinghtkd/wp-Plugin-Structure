@@ -171,7 +171,7 @@ class Ak_plugin_slug {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		// dd(Post::all());
+		dd(Post::with('postmeta')->get());
 	}
 
 	/**
