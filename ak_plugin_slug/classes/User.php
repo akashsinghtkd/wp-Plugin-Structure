@@ -5,10 +5,11 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 class User extends Eloquent
 {
 
-    function __construct($table = 'users')
+    function __construct()
     {
         global $table_prefix;
-        $this->table = $table_prefix . $table;
+     $this->table = $table_prefix .'users';
+     
     }
 
     /*
@@ -17,5 +18,9 @@ class User extends Eloquent
     public function todo()
     {
         return $this->hasMany('Todo');
+    }
+    public function usermeta()
+    {
+        return $this->hasMany(Usermeta::class, 'user_id', 'ID', $this->table);
     }
 }

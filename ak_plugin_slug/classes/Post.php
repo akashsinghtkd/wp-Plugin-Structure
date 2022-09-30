@@ -5,10 +5,10 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 class Post extends Eloquent
 {
 
-    function __construct($table = 'posts')
+    function __construct()
     {
         global $table_prefix;
-        $this->table = $table_prefix . $table;
+        $this->table = $table_prefix .'posts';
     }
 
     public function postmeta()
